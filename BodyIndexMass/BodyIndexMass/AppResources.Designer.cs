@@ -79,7 +79,16 @@ namespace BodyIndexMass {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Input your data.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Historical.
+        /// </summary>
+        internal static string Historical {
+            get {
+                return ResourceManager.GetString("Historical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Your Data.
         /// </summary>
         internal static string InputData {
             get {

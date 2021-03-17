@@ -123,8 +123,11 @@
   <data name="Height" xml:space="preserve">
     <value>Height (cm)</value>
   </data>
+  <data name="Historical" xml:space="preserve">
+    <value>Historical</value>
+  </data>
   <data name="InputData" xml:space="preserve">
-    <value>Input your data</value>
+    <value>Your Data</value>
   </data>
   <data name="PlaceHolderHeight" xml:space="preserve">
     <value>Type your height here</value>
