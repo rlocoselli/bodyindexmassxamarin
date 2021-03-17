@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BodyIndexMass.Views.BodyIndexMassPage"
+             xmlns:resources="clr-namespace:BodyIndexMass" Title="{Static resources:AppResources.Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Static resources:AppResources.Weight}" />
+            <Entry Text="{Binding Weight}" Keyboard="Numeric" Placeholder="Type your weight here" x:Name="txtWeight">
+            </Entry>
+            <Label Text="{Static resources:AppResources.Height}" />
+            <Entry Text="{Binding Height}" Keyboard="Numeric" Placeholder="Type your height here" x:Name="txtHeight">
+            </Entry>
+            <Label Text="{Static resources:AppResources.Result}" />
+            <Label x:Name="lblResult" Text="{Binding Result}" />
+            <Button x:Name="Calculate" Clicked="Calculate_Cliked" Text="{Static resources:AppResources.CalculateButton}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
