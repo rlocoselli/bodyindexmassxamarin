@@ -14,9 +14,7 @@ namespace BodyIndexMass.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BodyIndexMassPage : ContentPage
     {
-        Models.BodyIndexMassEntity bimp = new Models.BodyIndexMassEntity();
-
-        BodyIndexMassData db = new BodyIndexMassData();
+        BodyIndexMassEntityViewModel bimp = new BodyIndexMassEntityViewModel();
 
         public BodyIndexMassPage()
         {
@@ -25,16 +23,11 @@ namespace BodyIndexMass.Views
             BindingContext = bimp;
         }
 
-        public async void Calculate_Cliked(object sender, EventArgs e)
-        {
-            lblResult.Text = bimp.Result.ToString("0.00");
-        }
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            bimp.DateTime = DateTime.Now;
-            await db.SaveBodyAsync(bimp);
-            DisplayAlert("Saved", "Save successfully", "Ok");
+            bimp.Save();
+            await DisplayAlert("Saved", "Save successfully", "Ok");
         }
     }
 }

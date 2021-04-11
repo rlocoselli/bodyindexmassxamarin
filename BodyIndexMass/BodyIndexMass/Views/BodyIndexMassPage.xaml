@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BodyIndexMass.Views.BodyIndexMassPage"
-             xmlns:resources="clr-namespace:BodyIndexMass" Title="{Static resources:AppResources.Title}">
+             xmlns:resources="clr-namespace:BodyIndexMass" xmlns:viewmodels="clr-namespace:BodyIndexMass.ViewModels" x:DataType="viewmodels:BodyIndexMassEntityViewModel" Title="{Static resources:AppResources.Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
@@ -17,7 +17,7 @@
             </Entry>
             <Label Text="{Static resources:AppResources.Result}" />
             <Label x:Name="lblResult" Text="{Binding Result}" />
-            <Button x:Name="Calculate" Clicked="Calculate_Cliked" Text="{Static resources:AppResources.CalculateButton}"></Button>
+            <Button x:Name="Calculate" Text="{Static resources:AppResources.CalculateButton}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

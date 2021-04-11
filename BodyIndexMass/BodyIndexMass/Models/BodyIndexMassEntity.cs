@@ -7,18 +7,46 @@ namespace BodyIndexMass.Models
 {
     public class BodyIndexMassEntity
     {
+        private double _result = 0;
+        private double _weight = 0;
+        private double _height = 0;
+
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public double Weight { get; set; }
+        
+        public double Weight { 
+            get 
+            {
+                return _weight;
+            }
+            set
+            {
+                _weight = value;
+            }
+        
+        }
+        
         public DateTime DateTime { get; set; }
-        public double Height { get; set; }
+        
+        public double Height {
+            get
+            {
+                return _height;
+            }
+            set
+            {
+                _height = value;
+            }
+        }
+
         public double Result { 
             get
             {
-                double hsquared = Math.Pow((double)((Height / 100)), 2);
-                if (Height > 0) return (double)(Weight / hsquared);
-
-                return 0;
+                return _result;
+            }
+            set
+            {
+                _result = value;    
             }
         }
     }
