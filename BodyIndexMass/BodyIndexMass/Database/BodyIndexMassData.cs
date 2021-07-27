@@ -1,4 +1,5 @@
 ﻿using BodyIndexMass.Models;
+using BodyIndexMass.Services;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BodyIndexMass.Database
 {
-    public class BodyIndexMassData
+    public class BodyIndexMassData : IBodyIndexDataService
     {
         readonly SQLiteAsyncConnection database;
 

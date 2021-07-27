@@ -1,8 +1,11 @@
 ﻿using BodyIndexMass.Database;
 using BodyIndexMass.Models;
+using BodyIndexMass.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace BodyIndexMass.ViewModels
 {
@@ -10,14 +13,20 @@ namespace BodyIndexMass.ViewModels
     {
         private BodyIndexMassEntity _bodyIndexMassEntity = new BodyIndexMassEntity();
 
+        public Command SaveResult { get; }
+
         public BodyIndexMassEntityViewModel()
         {
+            SaveResult = new Command(async () => await Save());
         }
 
-        public async void Save()
+        public async Task Save()
         {
-            BodyIndexMassData db = new BodyIndexMassData();
+            IBodyIndexDataService db = DependencyService.Get<IBodyIndexDataService>();
+            _bodyIndexMassEntity.DateTime = DateTime.Now;
+
             await db.SaveBodyAsync(_bodyIndexMassEntity);
+            await Application.Current.MainPage.DisplayAlert("Saved", "Save successfully", "Ok");
         }
 
         public DateTime DateTime

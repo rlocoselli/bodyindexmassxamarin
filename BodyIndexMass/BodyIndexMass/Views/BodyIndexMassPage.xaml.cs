@@ -23,9 +23,9 @@ namespace BodyIndexMass.Views
             BindingContext = bimp;
         }
 
-
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
+            bimp.DateTime = DateTime.Now;
             bimp.Save();
             await DisplayAlert("Saved", "Save successfully", "Ok");
         }

@@ -4,7 +4,7 @@
              x:Class="BodyIndexMass.Views.BodyIndexMassPage"
              xmlns:resources="clr-namespace:BodyIndexMass" xmlns:viewmodels="clr-namespace:BodyIndexMass.ViewModels" x:DataType="viewmodels:BodyIndexMassEntityViewModel" Title="{Static resources:AppResources.Title}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Save" Command="{Binding SaveResult}" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -17,7 +17,6 @@
             </Entry>
             <Label Text="{Static resources:AppResources.Result}" />
             <Label x:Name="lblResult" Text="{Binding Result}" />
-            <Button x:Name="Calculate" Text="{Static resources:AppResources.CalculateButton}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

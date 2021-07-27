@@ -1,5 +1,6 @@
-﻿using BodyIndexMass.Services;
+﻿using BodyIndexMass.Database;
 using BodyIndexMass.Views;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,11 +10,20 @@ namespace BodyIndexMass
     public partial class App : Application
     {
 
-        public App()
+        void SetupServices(Action<IServiceCollection> addPlatformServices = null)
+        {
+            var services = new ServiceCollection();
+
+            addPlatformServices?.Invoke(services);
+            DependencyService.Register<BodyIndexMassData>();
+        }
+
+        public App(Action<IServiceCollection> addPlatformServices = null)
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            SetupServices(addPlatformServices);
+
             MainPage = new AppShell();
         }
 
