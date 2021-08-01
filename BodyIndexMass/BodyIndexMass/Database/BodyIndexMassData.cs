@@ -23,7 +23,7 @@ namespace BodyIndexMass.Database
         public Task<List<BodyIndexMassEntity>> GetBodyAsync()
         {
             //Get all notes.
-            return database.Table<BodyIndexMassEntity>().ToListAsync();
+            return database.Table<BodyIndexMassEntity>().OrderBy(p=>p.DateTime).ToListAsync();
         }
 
  

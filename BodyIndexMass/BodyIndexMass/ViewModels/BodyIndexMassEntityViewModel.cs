@@ -68,6 +68,16 @@ namespace BodyIndexMass.ViewModels
             set
             {
                 _bodyIndexMassEntity.Result = value;
+                Classification = CalculateClassification();
+                OnPropertyChanged();
+            }
+        }
+        public string Classification 
+        {
+            get => _bodyIndexMassEntity.Classification;
+            set
+            {
+                _bodyIndexMassEntity.Classification = value;
                 OnPropertyChanged();
             }
         }
@@ -78,6 +88,20 @@ namespace BodyIndexMass.ViewModels
             if (Height > 0) return (double)(Weight / hsquared);
 
             return 0;
+        }
+
+        private string CalculateClassification()
+        {
+            double result = this.Result;
+
+            if (result < 18.5) return AppResources.Underweight;
+            if (result > 18.5 && result < 25) return AppResources.NormalWeight;
+            if (result >= 25 && result < 30) return AppResources.Overweight;
+            if (result >= 30 && result < 35) return AppResources.ObesityClass1;
+            if (result >= 35 && result < 40) return AppResources.ObesityClass2;
+            if (result >= 40) return AppResources.ObesityClass3;
+
+            return AppResources.Underweight;
         }
     }
 }

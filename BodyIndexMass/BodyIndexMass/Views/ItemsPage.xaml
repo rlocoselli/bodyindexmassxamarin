@@ -15,7 +15,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10" x:DataType="model:BodyIndexMassEntity">
-                        <Label Text="{Binding DateTime}" 
+                        <Label Text="{Binding DateTime, StringFormat='{0:MMMM dd, yyyy}'}" 
                             LineBreakMode="NoWrap" 
                             Style="{DynamicResource ListItemTextStyle}" 
                             FontSize="16" />

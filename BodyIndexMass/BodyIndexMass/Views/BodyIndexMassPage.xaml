@@ -6,7 +6,11 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" Command="{Binding SaveResult}" />
     </ContentPage.ToolbarItems>
-    
+
+    <ContentPage.Resources>
+        <viewmodels:ColorConverter x:Key="ColorConverter" />
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Static resources:AppResources.Weight}" />
@@ -17,6 +21,8 @@
             </Entry>
             <Label Text="{Static resources:AppResources.Result}" />
             <Label x:Name="lblResult" Text="{Binding Result}" />
+            <Label Text="{Static resources:AppResources.Classification}" />
+            <Label x:Name="lblClassification" Text="{Binding Classification}" TextColor="{Binding Classification, Converter={StaticResource ColorConverter}}" />        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

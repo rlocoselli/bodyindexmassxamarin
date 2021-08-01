@@ -10,6 +10,7 @@ namespace BodyIndexMass.Models
         private double _result = 0;
         private double _weight = 0;
         private double _height = 0;
+        private string _classification = "";
 
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
@@ -47,6 +48,18 @@ namespace BodyIndexMass.Models
             set
             {
                 _result = value;    
+            }
+        }
+
+        public string Classification
+        {
+            get
+            {
+                return _classification;
+            }
+            set
+            {
+                _classification = value;
             }
         }
     }

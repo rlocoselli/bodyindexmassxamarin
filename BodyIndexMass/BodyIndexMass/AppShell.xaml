@@ -32,6 +32,7 @@
     <TabBar>
         <ShellContent Title="{Static resources:AppResources.InputData}" Icon="data.png" ContentTemplate="{DataTemplate local:BodyIndexMassPage}" />
         <ShellContent Title="{Static resources:AppResources.Historical}" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="{Static resources:AppResources.InputData}" Icon="data.png" ContentTemplate="{DataTemplate local:Charts}" />
     </TabBar>
     
 </Shell>
